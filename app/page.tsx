@@ -25,7 +25,6 @@ const steps: Step[] = [
   {
     id: 'sex',
     title: "Descubre tu Tipo de Intestino y por qué la Fibra y los Probióticos Nunca Funcionaron",
-    subtitle: "Responde 6 preguntas rápidas y descubre qué está frenando tu digestión — en menos de 60 segundos.",
     question: "¿Cuál es tu sexo?",
     options: [
       { label: "Mujer", value: "mujer" },
@@ -226,9 +225,6 @@ export default function Home() {
                       <h1 className="text-2xl md:text-[2.75rem] font-extrabold text-slate-900 mb-2 md:mb-5 leading-tight tracking-tight">
                         Descubre tu Tipo de Intestino y por qué la Fibra y los Probióticos <span className="text-rose-500">Nunca Funcionaron</span>
                       </h1>
-                      <p className="hidden md:block text-lg md:text-xl text-slate-600 font-medium px-2 max-w-2xl mx-auto">
-                        Responde 6 preguntas rápidas y descubre qué está frenando tu digestión — en menos de 60 segundos.
-                      </p>
                     </div>
                   )}
 
