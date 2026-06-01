@@ -21,14 +21,14 @@ type Step = {
   progressBar?: { text: string; percentage: number };
 };
 
-const steps: Step[] = [
+const getSteps = (sex: string): Step[] => [
   {
     id: 'sex',
     title: "Descubre Tu Tipo de Intestino y la Verdad Sobre la Fibra, los Laxantes y los Probióticos",
     question: "¿Cuál es tu sexo?",
     options: [
-      { label: "Mujer", value: "mujer" },
-      { label: "Hombre", value: "hombre" }
+      { label: "Hombre", value: "hombre" },
+      { label: "Mujer", value: "mujer" }
     ],
     type: 'single'
   },
@@ -88,10 +88,10 @@ const steps: Step[] = [
     id: 'identity',
     question: "¿Cuál de estas frases describe mejor cómo te sientes hoy?",
     options: [
-      { label: "ATRAPADA", description: '"Vivo planeando mi día alrededor del baño y evito comer ciertas cosas para no pasarla mal."', value: "atrapada" },
-      { label: "PESADA", description: '"Me siento hinchada e inflamada todo el tiempo, como si cargara un peso que no se va."', value: "pesada" },
-      { label: "CANSADA", description: '"Mi digestión me roba la energía, el ánimo y la confianza para vivir mi vida."', value: "cansada" },
-      { label: "SIN RESPUESTAS", description: '"He probado de todo y nadie me ha dado una solución real que funcione."', value: "sin-respuestas" }
+      { label: sex === 'hombre' ? "ATRAPADO" : "ATRAPADA", description: "Vivo planeando mi día alrededor del baño y evito comer ciertas cosas para no pasarla mal.", value: "atrapada" },
+      { label: sex === 'hombre' ? "PESADO" : "PESADA", description: sex === 'hombre' ? "Me siento hinchado e inflamado todo el tiempo, como si cargara un peso que no se va." : "Me siento hinchada e inflamada todo el tiempo, como si cargara un peso que no se va.", value: "pesada" },
+      { label: sex === 'hombre' ? "CANSADO" : "CANSADA", description: "Mi digestión me roba la energía, el ánimo y la confianza para vivir mi vida.", value: "cansada" },
+      { label: "SIN RESPUESTAS", description: "He probado de todo y nadie me ha dado una solución real que funcione.", value: "sin-respuestas" }
     ],
     type: 'single',
     buttonText: "Ver mi resultado",
@@ -104,6 +104,9 @@ export default function Home() {
   const [answers, setAnswers] = useState<Record<number, string | string[]>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [showOffer, setShowOffer] = useState(false);
+
+  const sex = (answers[0] as string) || 'mujer';
+  const steps = getSteps(sex);
 
   const step = currentStep < steps.length ? steps[currentStep] : null;
 
