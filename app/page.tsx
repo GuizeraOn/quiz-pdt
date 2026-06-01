@@ -24,7 +24,7 @@ type Step = {
 const steps: Step[] = [
   {
     id: 'sex',
-    title: "Descubre tu Tipo de Intestino y por qué la Fibra y los Probióticos Nunca Funcionaron",
+    title: "Descubre Tu Tipo de Intestino y la Verdad Sobre la Fibra, los Laxantes y los Probióticos",
     question: "¿Cuál es tu sexo?",
     options: [
       { label: "Mujer", value: "mujer" },
@@ -223,7 +223,7 @@ export default function Home() {
                   {currentStep === 0 && (
                     <div className="text-center mb-6 md:mb-10 mt-2 md:mt-0">
                       <h1 className="text-2xl md:text-[2.75rem] font-extrabold text-slate-900 mb-2 md:mb-5 leading-tight tracking-tight">
-                        Descubre tu Tipo de Intestino y por qué la Fibra y los Probióticos <span className="text-rose-500">Nunca Funcionaron</span>
+                        Descubre Tu Tipo de Intestino y la Verdad Sobre la Fibra, los Laxantes y <span className="text-rose-500">los Probióticos</span>
                       </h1>
                     </div>
                   )}
