@@ -1,0 +1,6 @@
+{
+  "name": "Quiz Protocolo Desbloqueo",
+  "description": "Descubre tu Tipo de Intestino con este quiz interactivo",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
